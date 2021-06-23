@@ -6,4 +6,4 @@
   tasks:
     - name: Print Url
       debug:
-        msg: {{ "Url" }}
+        msg: Url = {{ Url }}
