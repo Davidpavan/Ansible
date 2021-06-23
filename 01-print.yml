@@ -1,0 +1,6 @@
+- name: Print Message
+  hosts: all
+  tasks:
+    - name: Print hello world
+      debug:
+        msg: Hello world..!!
