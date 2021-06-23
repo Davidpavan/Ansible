@@ -7,3 +7,8 @@
     - name: Print Url
       debug:
         msg: Url = {{ Url }}
+    - name: print url from task
+      debug:
+        msg: Url = {{ Url }}
+      var:
+        Url: google.example.com
