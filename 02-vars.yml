@@ -1,0 +1,9 @@
+- name: Print Variables
+  hosts: all
+  vars:
+    Url: play.example.com
+    Project: ansible
+  tasks:
+    - name: Print Url
+      debug:
+        msg: {{ Url }}
