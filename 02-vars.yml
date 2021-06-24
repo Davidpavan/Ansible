@@ -18,3 +18,14 @@
         msg: Url = {{ Url }}
       vars:
         Url: google.example.com
+
+
+- name: Demo on dynamic vars
+  hosts: all
+  tasks:
+    - name: Gather date
+      shell: date +%F
+      register: out
+    - name: print date
+      debug:
+        msg: {{ out }}
