@@ -1,0 +1,9 @@
+- name: setup todo project
+  hosts: all
+  become: yes
+  tasks:
+    - name: Apt update
+      apt:
+        name: nginx
+        update_cache: yes
+        state: present
