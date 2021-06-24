@@ -3,6 +3,8 @@
   vars:
     Url: play.example.com
     Project: ansible
+  vars_files:
+    - exaple-vars.yml
   tasks:
     - name: Print Url
       debug:
