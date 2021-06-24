@@ -7,7 +7,7 @@
     - exaple-vars.yml
   vars-prompt:
     - name: Url
-      prompt: enter url
+      prompt: enter Url
   tasks:
     - name: Print Url
       debug:
