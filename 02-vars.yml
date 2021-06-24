@@ -5,6 +5,9 @@
     Project: ansible
   vars_files:
     - exaple-vars.yml
+  vars-prompt:
+    - name: Url
+      prompt: enter url
   tasks:
     - name: Print Url
       debug:
