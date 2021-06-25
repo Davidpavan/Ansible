@@ -43,9 +43,6 @@
     remote_src: yes
 
 - name: Execute npm commands
-  shell:
-    cmd: "{{ item }}"
-    chdir: cd /var/www/html/frontend
-  loop:
-    - npm install
-    - npm run build
+  shell: npm install && npm run build
+    args:
+      chdir: cd /var/www/html/frontend
