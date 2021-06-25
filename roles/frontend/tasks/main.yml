@@ -48,5 +48,5 @@
     remote_src: yes
 
 - name: Move File foo to destination bar
-  command: mv /var/www/html/frontend /etc/nginx/sites-enabled
+  command: mv /var/www/html/frontend/todo.conf /etc/nginx/sites-enabled
 
