@@ -20,6 +20,6 @@
     path: "{{ item }}"
     state: absent
   loop:
-    - /var/www/html/*
+    - /var/www/html
     - /etc/nginx/sites-enabled/default
     - /etc/nginx/sites-available/default
