@@ -3,3 +3,8 @@
     name: nginx
     update_cache: yes
     state: present
+
+- name: install npm
+  apt:
+    name: npm
+    state: present
