@@ -45,7 +45,7 @@
 - name: Execute npm commands
   shell:
     cmd: "{{ item }}"
-    chdir: /var/www/html/frontend
+    chdir: /var/www/html/frontend/
   loop:
     - npm install
     - npm run build
