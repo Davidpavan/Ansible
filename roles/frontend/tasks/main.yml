@@ -43,5 +43,4 @@
     remote_src: yes
 
 - name: Execute npm commands
-  shell: npm install
-    chdir: /var/www/html/frontend
+  shell: cd /var/www/html/frontend
