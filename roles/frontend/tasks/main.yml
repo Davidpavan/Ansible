@@ -4,7 +4,22 @@
     update_cache: yes
     state: present
 
+- name: Start service
+  systemd:
+    name: nginx
+    state: started
+    enabled: yes
+
 - name: install npm
   apt:
     name: npm
     state: present
+
+- name: Remove default files
+  file:
+    path: "{{ item }}"
+    state: absent
+  loop:
+    - /var/www/html/*
+    - /etc/nginx/sites-enabled/default
+    - /etc/nginx/sites-available/default
