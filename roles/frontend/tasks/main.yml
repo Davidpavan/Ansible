@@ -15,7 +15,14 @@
     name: npm
     state: present
 
-- name: Remove default files
+- name: Download Component
+  get_url:
+    url: http://3.239.241.106:8081/repository/frontend/frontend-{{ APP_VERSION }}.zip
+    dest: /tmp/frontend.zip
+    username: admin
+    password: admin123
+
+- name: Remove default content
   file:
     path: "{{ item }}"
     state: absent
@@ -23,3 +30,15 @@
     - /var/www/html
     - /etc/nginx/sites-enabled/default
     - /etc/nginx/sites-available/default
+
+- name: Create HtDocs directory
+  file:
+    path: /var/www/html
+    state: directory
+
+- name: Unzip downloaded content
+  unarchive:
+    src: /tmp/frontend.zip
+    dest: /var/www/html
+    remote_src: yes
+
