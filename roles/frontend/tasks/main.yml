@@ -44,5 +44,4 @@
 
 - name: Execute npm commands
   shell: npm install
-    args:
-      chdir: cd /var/www/html/frontend
+    chdir: cd /var/www/html/frontend
