@@ -36,12 +36,15 @@
     path: /var/www/html
     state: directory
 
+- name: Create HtDocs directory
+  file:
+    path: /var/www/html/frontend
+    state: directory
+
 - name: Unzip downloaded content
   unarchive:
     src: /tmp/frontend.zip
-    dest: /var/www/html
+    dest: /var/www/html/frontend
     remote_src: yes
 
-- name: Execute npm commands
-  shell:
-    chdir: /var/www/html/frontend
+
