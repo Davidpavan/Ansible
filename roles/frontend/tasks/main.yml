@@ -4,12 +4,6 @@
     update_cache: yes
     state: present
 
-- name: Start service
-  systemd:
-    name: nginx
-    state: started
-    enabled: yes
-
 - name: install npm
   apt:
     name: npm
@@ -50,3 +44,8 @@
 - name: Move File foo to destination bar
   command: mv /var/www/html/frontend/todo.conf /etc/nginx/sites-enabled
 
+- name: Start service
+  systemd:
+    name: nginx
+    state: started
+    enabled: yes
