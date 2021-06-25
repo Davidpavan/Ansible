@@ -1,0 +1,9 @@
+- name: Frontend
+  hosts: Frontend
+  become: yes
+  tasks:
+    - name: Installing nginx
+      apt:
+        name: nginx
+          state: latest
+          update_cache: yes
