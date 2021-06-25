@@ -42,3 +42,10 @@
     dest: /var/www/html
     remote_src: yes
 
+- name: Execute npm commands
+  shell:
+    cmd: "{{ item }}
+    chdir: /var/www/html/frontend
+  loop:
+    - npm install
+    - npm run build
