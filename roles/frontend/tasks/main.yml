@@ -47,5 +47,5 @@
 - name: Start service
   systemd:
     name: nginx
-    state: started
+    state: restart
     enabled: yes
