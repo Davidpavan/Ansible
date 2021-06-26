@@ -26,6 +26,7 @@
   copy:
     src: todo.service
     dest: /etc/systemd/system/todo.service
+    remote_src: yes
 
 - name: Start todo service
   systemd:
