@@ -11,7 +11,7 @@
     username: admin
     password: admin123
 
-- name: Create HtDocs directory
+- name: Create todo directory
   file:
     path: /root/todo
     state: directory
