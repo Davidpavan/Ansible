@@ -1,0 +1,8 @@
+- name: Update cache
+  apt:
+    update_cache: yes
+
+- name:
+    apt:
+      name: npm
+      state: present
