@@ -2,7 +2,7 @@
   apt:
     update_cache: yes
 
-- name:
+- name: Install npm
     apt:
       name: npm
       state: present
