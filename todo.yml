@@ -4,8 +4,8 @@
   roles:
     - role: frontend
       tags: frontend
-      when: COMPONENT=frontend
+      when: COMPONENT == "frontend"
 
     - role: todo
       tags: todo
-      when: COMPONENT=todo
+      when: COMPONENT == "todo"
