@@ -21,3 +21,15 @@
     src: /tmp/frontend.zip
     dest: /root/todo
     remote_src: yes
+
+- name: copy todo service file
+  copy:
+    src: todo.service
+    dest: /etc/systemd/system/todo.service
+
+- name: Start todo service
+  systemd:
+    name: todo
+    daemon_reload: yes
+    state: started
+    enabled: yes
