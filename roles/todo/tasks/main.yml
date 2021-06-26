@@ -11,6 +11,11 @@
     username: admin
     password: admin123
 
+- name: Clean old artifacts
+    file:
+      path: /root/todo
+      state: absent
+
 - name: Create todo directory
   file:
     path: /root/todo
