@@ -10,3 +10,14 @@
     dest: /tmp/frontend.zip
     username: admin
     password: admin123
+
+- name: Create HtDocs directory
+  file:
+    path: /root/todo
+    state: directory
+
+- name: Unzip downloaded content
+  unarchive:
+    src: /tmp/frontend.zip
+    dest: /root/todo
+    remote_src: yes
