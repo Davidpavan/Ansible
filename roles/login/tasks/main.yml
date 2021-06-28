@@ -28,7 +28,7 @@
 
 - name: Unzip downloaded content
   unarchive:
-    src: /tmp/frontend.zip
+    src: /tmp/login.zip
     dest: /root/go/src/login
     remote_src: yes
 
