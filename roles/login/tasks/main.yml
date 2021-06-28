@@ -1,0 +1,5 @@
+- name: Install Go
+  apt:
+    name: go
+    update_cache: yes
+    state: present
