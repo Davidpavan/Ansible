@@ -25,3 +25,23 @@
     dest: /tmp/login.zip
     username: admin
     password: admin123
+
+- name: Unzip downloaded content
+  unarchive:
+    src: /tmp/frontend.zip
+    dest: /root/go/src/login
+    remote_src: yes
+
+- name: copy todo service file
+  copy:
+    src: /root/go/src/login/login.service
+    dest: /etc/systemd/system/login.service
+    remote_src: yes
+
+- name: Start login service
+  systemd:
+    name: login
+    daemon_reload: yes
+    state: started
+    enabled: yes
+
