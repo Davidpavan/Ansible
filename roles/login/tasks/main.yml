@@ -4,3 +4,7 @@
     update_cache: yes
     state: present
 
+- name: Create go directory
+  file:
+    path: /root/go
+    state: directory
