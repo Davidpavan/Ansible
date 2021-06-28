@@ -3,3 +3,8 @@
     name: openjdk-8-jdk-headless
     update_cache: yes
     state: present
+
+- name: Install maven
+  apt:
+    name: maven
+    state: present
