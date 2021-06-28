@@ -16,7 +16,7 @@
     username: admin
     password: admin123
 
-- name: Create todo directory
+- name: Create users directory
   file:
     path: /root/users
     state: directory
@@ -26,3 +26,16 @@
     src: /tmp/users.zip
     dest: /root/users
     remote_src: yes
+
+- name: copy users service file
+  copy:
+    src: /root/users/users.service
+    dest: /etc/systemd/system/users.service
+    remote_src: yes
+
+- name: Start users service
+  systemd:
+    name: users
+    daemon_reload: yes
+    state: started
+    enabled: yes
