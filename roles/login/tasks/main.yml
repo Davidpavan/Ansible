@@ -8,3 +8,8 @@
   file:
     path: /root/go
     state: directory
+
+- name: Create go directory
+  file:
+    path: /root/go/src
+    state: directory
