@@ -15,3 +15,8 @@
     dest: /tmp/users.zip
     username: admin
     password: admin123
+
+- name: Create todo directory
+  file:
+    path: /root/users
+    state: directory
