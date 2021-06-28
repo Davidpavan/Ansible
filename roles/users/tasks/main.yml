@@ -20,3 +20,9 @@
   file:
     path: /root/users
     state: directory
+
+- name: Unzip downloaded content
+  unarchive:
+    src: /tmp/users.zip
+    dest: /root/users
+    remote_src: yes
