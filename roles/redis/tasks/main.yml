@@ -1,0 +1,16 @@
+- name: Install redis
+  apt:
+    name: redis-server
+    update_cache: yes
+    state: present
+
+- name: Update redis config from local address to 0.0.0.0
+  replace:
+    path: /etc/redis/redis.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+- name: Start redis
+  systemd:
+    state: restarted
+    enabled: yes
