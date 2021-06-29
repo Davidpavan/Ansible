@@ -16,8 +16,8 @@
 
     - role: login
       tags: login
-      when: COMPONENT =="login"
+      when: COMPONENT == "login"
 
     - role: redis
       tags: redis
-      when: COMPONENT =="redis"
+      when: COMPONENT == "redis"
