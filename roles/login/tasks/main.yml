@@ -32,11 +32,10 @@
     dest: /root/go/src/login
     remote_src: yes
 
-- name: copy todo service file
+- name: Update login service file
   copy:
     src: login.service
-    dest: /etc/systemd/system/login.service
-    remote_src: yes
+    dest: /etc/nginx/sites-enabled/login.service
 
 - name: Start login service
   systemd:
