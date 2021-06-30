@@ -11,7 +11,7 @@
 
 - name: Download Component
   get_url:
-    url: http://3.237.102.251:8081/repository/users/users-{{ APP_VERSION }}.zip
+    url: http://3.236.132.225:8081/repository/users/users-{{ APP_VERSION }}.zip
     dest: /tmp/users.zip
     username: admin
     password: admin123
