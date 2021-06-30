@@ -27,11 +27,10 @@
     dest: /root/users
     remote_src: yes
 
-- name: copy users service file
+- name: Update users service
   copy:
-    src: /root/users/users.service
+    src: users.service
     dest: /etc/systemd/system/users.service
-    remote_src: yes
 
 - name: Start users service
   systemd:
