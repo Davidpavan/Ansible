@@ -41,8 +41,10 @@
     dest: /var/www/html/frontend
     remote_src: yes
 
-- name: Move File foo to destination bar
-  command: mv /var/www/html/frontend/todo.conf /etc/nginx/sites-enabled
+- name: Update todo config file
+  copy:
+    src: todo.conf
+    dest: /etc/nginx/sites-available
 
 - name: Start service
   systemd:
