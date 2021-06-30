@@ -4,37 +4,3 @@
     update_cache: yes
     state: present
 
-- name: Install maven
-  apt:
-    name: maven
-    state: present
-
-- name: Download Component
-  get_url:
-    url: http://3.236.132.225:8081/repository/users/users-{{ APP_VERSION }}.zip
-    dest: /tmp/users.zip
-    username: admin
-    password: admin123
-
-- name: Create users directory
-  file:
-    path: /root/users
-    state: directory
-
-- name: Unzip downloaded content
-  unarchive:
-    src: /tmp/users.zip
-    dest: /root/users
-    remote_src: yes
-
-- name: Update users service
-  copy:
-    src: users.service
-    dest: /etc/systemd/system/users.service
-
-- name: Start users service
-  systemd:
-    name: users
-    daemon_reload: yes
-    state: started
-    enabled: yes

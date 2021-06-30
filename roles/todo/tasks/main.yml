@@ -4,37 +4,3 @@
     update_cache: yes
     state: present
 
-- name: Download Component
-  get_url:
-    url: http://3.236.132.225:8081/repository/todo/todo-{{ APP_VERSION }}.zip
-    dest: /tmp/todo.zip
-    username: admin
-    password: admin123
-
-- name: Clean old artifacts
-  file:
-    path: /root/todo
-    state: absent
-
-- name: Create todo directory
-  file:
-    path: /root/todo
-    state: directory
-
-- name: Unzip downloaded content
-  unarchive:
-    src: /tmp/todo.zip
-    dest: /root/todo
-    remote_src: yes
-
-- name: Update todo service file
-  copy:
-    src: todo.service
-    dest: /etc/systemd/system/todo.service
-
-- name: Start todo service
-  systemd:
-    name: todo
-    daemon_reload: yes
-    state: started
-    enabled: yes
