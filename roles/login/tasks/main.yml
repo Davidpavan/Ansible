@@ -34,7 +34,7 @@
 
 - name: copy todo service file
   copy:
-    src: /root/go/src/login/login.service
+    src: login.service
     dest: /etc/systemd/system/login.service
     remote_src: yes
 
