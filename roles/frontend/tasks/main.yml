@@ -44,7 +44,7 @@
 - name: Update todo config file
   copy:
     src: todo.conf
-    dest: /etc/nginx/sites-available
+    dest: /etc/nginx/sites-enabled/todo.conf
 
 - name: Start service
   systemd:
