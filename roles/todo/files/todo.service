@@ -1,0 +1,10 @@
+[Unit]
+Description = Todo Service
+[Service]
+Environment=REDIS_HOST=REDIS_DNSNAME
+ExecStart=/bin/node /root/todo/server.js
+SyslogIdentifier=todo
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
