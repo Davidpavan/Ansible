@@ -35,7 +35,7 @@
 - name: Update login service file
   copy:
     src: login.service
-    dest: /etc/nginx/sites-enabled/login.service
+    dest: /etc/systemd/system/login.service
 
 - name: Start login service
   systemd:
