@@ -6,7 +6,7 @@
 
 - name: Download Component
   get_url:
-    url: http://3.238.79.184:8081/repository/todo/todo-{{ APP_VERSION }}.zip
+    url: http://3.237.102.251:8081/repository/todo/todo-{{ APP_VERSION }}.zip
     dest: /tmp/todo.zip
     username: admin
     password: admin123
