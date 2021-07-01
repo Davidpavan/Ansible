@@ -30,7 +30,7 @@ Instance_Create() {
 }
 
 if [ "$1" == "all" ]; then
-  for instance in frontend mongodb catalogue redis user cart mysql shipping rabbitmq payment ; do
+  for instance in frontend redis user login todo ; do
     Instance_Create $instance-dev
   done
 else
