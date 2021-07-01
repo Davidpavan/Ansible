@@ -1,0 +1,11 @@
+- name: Update todo service file
+  copy:
+    src: "{{COMPONENT}}.service"
+    dest: /etc/systemd/system/{{COMPONENT}}.service
+
+- name: Start {{COMPONENT}} service
+  systemd:
+    name: "{{COMPONENT}}"
+    daemon_reload: yes
+    state: started
+    enabled: yes

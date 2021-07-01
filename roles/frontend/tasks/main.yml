@@ -9,12 +9,8 @@
     name: npm
     state: present
 
-- name: Download Component
-  get_url:
-    url: http://3.236.132.225:8081/repository/frontend/frontend-{{ APP_VERSION }}.zip
-    dest: /tmp/frontend.zip
-    username: admin
-    password: admin123
+- name: Download arftifacts from nexus
+  include_tasks: download-nexus-artifacts.yml
 
 - name: Remove default content
   file:

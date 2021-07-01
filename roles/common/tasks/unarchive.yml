@@ -1,0 +1,15 @@
+- name: Clean old artifacts
+  file:
+    path: /root/{{COMPONENT}}
+    state: absent
+
+- name: Create {{COMPONENT}} directory
+  file:
+    path: /root/{{COMPONENT}}
+    state: directory
+
+- name: Unzip downloaded content
+  unarchive:
+    src: /tmp/{{COMPONENT}}.zip
+    dest: /root/{{COMPONENT}}
+    remote_src: yes

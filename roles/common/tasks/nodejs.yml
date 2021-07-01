@@ -1,0 +1,14 @@
+- name: install npm
+  apt:
+    name: npm
+    update_cache: yes
+    state: present
+
+- name: Download arftifacts from nexus
+  include_tasks: download-nexus-artifacts.yml
+
+- name: Download arftifacts from nexus
+  include_tasks: unarchive.yml
+
+- name: Download arftifacts from nexus
+  include_tasks: setup-systemD.yml

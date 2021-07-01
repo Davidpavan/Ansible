@@ -19,12 +19,10 @@
     path: /root/go/src/login
     state: directory
 
-- name: Download Component
-  get_url:
-    url: http://3.236.132.225:8081/repository/login/login-{{ APP_VERSION }}.zip
-    dest: /tmp/login.zip
-    username: admin
-    password: admin123
+- name: Import nexus common role
+  include_role:
+    name: common
+    tasks_from: download-nexus-artifacts
 
 - name: Unzip downloaded content
   unarchive:
@@ -32,15 +30,8 @@
     dest: /root/go/src/login
     remote_src: yes
 
-- name: Update login service file
-  copy:
-    src: login.service
-    dest: /etc/systemd/system/login.service
-
-- name: Start login service
-  systemd:
-    name: login
-    daemon_reload: yes
-    state: started
-    enabled: yes
+- name: Import nexus common role
+  include_role:
+    name: common
+    tasks_from: setup-systemD
 

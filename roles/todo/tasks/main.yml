@@ -1,10 +1,4 @@
-- name: install npm
-  apt:
-    name: npm
-    update_cache: yes
-    state: present
-
 - name: Import nexus common role
   include_role:
     name: common
-    tasks_from: nexus
+    tasks_from: nodejs
