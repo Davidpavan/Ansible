@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-LID=lt-00bc8565629a21a72
+LID=lt-05a00cc3fdff3340e
 LVER=1
 #COMPONENT=$1
 
@@ -25,8 +25,8 @@ Instance_Create() {
 
   sed -e "s/COMPONENT/${COMPONENT}/" -e "s/IPADDRESS/${IPADDRESS}/" record.json >/tmp/record.json
   aws route53 change-resource-record-sets --hosted-zone-id Z01109932OAEV19U6FDDX --change-batch file:///tmp/record.json
-  sed -i -e "/${COMPONENT}/ d" ../inv
-  echo "${IPADDRESS} COMPONENT=$(echo ${COMPONENT} | awk -F - '{print $1}')" >>../inv
+  sed -i -e "/${COMPONENT}/ d" ../inventory
+  echo "${IPADDRESS} COMPONENT=$(echo ${COMPONENT} | awk -F - '{print $1}')" >>../inventory
 }
 
 if [ "$1" == "all" ]; then
