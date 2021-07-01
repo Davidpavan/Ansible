@@ -1,25 +1,14 @@
-- name: Install Go
-  apt:
-    name: golang
-    update_cache: yes
-    state: present
-
-- name: Create go directory
-  file:
-    path: /root/go
-    state: directory
-
-- name: Create go directory
-  file:
-    path: /root/go/src
-    state: directory
+- name: Import golang common role
+  include_role:
+    name: common
+    tasks_from: golang
 
 - name: Create go directory
   file:
     path: /root/go/src/login
     state: directory
 
-- name: Import nexus common role
+- name: Import artifacts common role
   include_role:
     name: common
     tasks_from: download-nexus-artifacts

@@ -1,0 +1,15 @@
+- name: Install Go
+  apt:
+    name: golang
+    update_cache: yes
+    state: present
+
+- name: Create go directory
+  file:
+    path: /root/go
+    state: directory
+
+- name: Create go directory
+  file:
+    path: /root/go/src
+    state: directory

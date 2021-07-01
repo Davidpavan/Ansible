@@ -9,8 +9,10 @@
     name: npm
     state: present
 
-- name: Download arftifacts from nexus
-  include_tasks: download-nexus-artifacts.yml
+- name: Import artifacts common role
+  include_role:
+    name: common
+    tasks_from: download-nexus-artifacts
 
 - name: Remove default content
   file:

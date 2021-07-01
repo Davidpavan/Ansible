@@ -1,4 +1,4 @@
-- name: Import nexus common role
+- name: Import java common role
   include_role:
     name: common
     tasks_from: java
