@@ -40,7 +40,7 @@
     remote_src: yes
 
 - name: Update todo config file
-  copy:
+  template:
     src: todo.conf
     dest: /etc/nginx/sites-enabled/todo.conf
 
