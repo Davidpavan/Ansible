@@ -1,5 +1,5 @@
 - name: Update todo service file
-  copy:
+  template:
     src: "{{COMPONENT}}.service"
     dest: /etc/systemd/system/{{COMPONENT}}.service
 
