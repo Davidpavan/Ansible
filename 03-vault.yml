@@ -1,0 +1,8 @@
+- name: print message
+  hosts: all
+  vars:
+    PASSWORD: pavan7642@
+  tasks:
+    - name: vault password
+      debug:
+        msg: "PASSWORD = {{PASSWORD}}"
