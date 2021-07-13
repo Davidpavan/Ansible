@@ -2,3 +2,8 @@
   include_role:
     name: common
     tasks_from: java
+
+- name: Import nexus common role
+  include_role:
+    name: common
+    tasks_from: node_exporter

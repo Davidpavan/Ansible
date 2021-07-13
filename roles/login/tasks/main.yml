@@ -24,3 +24,7 @@
     name: common
     tasks_from: setup-systemD
 
+- name: Import nexus common role
+  include_role:
+    name: common
+    tasks_from: node_exporter
