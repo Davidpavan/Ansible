@@ -31,10 +31,11 @@ Instance_Create() {
 
 if [ "$1" == "all" ]; then
   for instance in frontend login users todo redis ; do
-    Instance_Create $instance-dev
+    Instance_Create $instance
   done
 else
   Instance_Create $1
 fi
 
+#Instance_Create $instance-dev
 #Instance_Create $1-dev ==> if need any environment like dev,prod or anything
