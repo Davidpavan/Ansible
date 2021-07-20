@@ -1,0 +1,37 @@
+# ============================== Filebeat inputs ===============================
+
+filebeat.inputs:
+
+  - type: log
+
+    # Change to true to enable this input configuration.
+    enabled: false
+
+    # Paths that should be crawled and fetched. Glob based paths.
+    paths:
+      - /var/log/*.log
+      #- c:\programdata\elasticsearch\logs\*
+
+# ============================== Filebeat modules ==============================
+
+filebeat.config.modules:
+  # Glob pattern for configuration loading
+  path: ${path.config}/modules.d/*.yml
+
+  # Set to true to enable config reloading
+  reload.enabled: false
+
+# ======================= Elasticsearch template setting =======================
+
+setup.template.settings:
+  index.number_of_shards: 1
+
+# ---------------------------- Elasticsearch Output ----------------------------
+output.elasticsearch:
+  # Array of hosts to connect to.
+  hosts: ["localhost:9200"]
+
+  # ------------------------------ Logstash Output -------------------------------
+  #output.logstash:
+  # The Logstash hosts
+  #hosts: ["localhost:5044"]
