@@ -1,2 +1,7 @@
 - name: Setup hostname
   shell: set-hostname {{COMPONENT}}
+
+- name: Update Rsyslog config
+  copy:
+    src: rsyslog.conf
+    dest: /etc/rsyslog.d/todo.conf
