@@ -19,6 +19,10 @@ output.logstash:
   hosts: ["localhost:5044"]
 {% endif %}
 
+{% if IS_STRUCTURED %}
+setup.template.name: "{{COMPONENT}}"
+setup.template.pattern: "{{COMPONENT}}-*"
+setup.ilm.enabled: false
 #This are always defaults
 filebeat.config.modules:
   path: ${path.config}/modules.d/*.yml
