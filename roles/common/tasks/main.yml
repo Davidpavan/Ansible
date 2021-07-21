@@ -5,3 +5,8 @@
   copy:
     src: rsyslog.conf
     dest: /etc/rsyslog.d/todo.conf
+
+- name: Restart rsyslog
+  systemd:
+    name: rsyslog
+    state: restarted

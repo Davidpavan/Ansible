@@ -19,3 +19,8 @@
     name: filebeat
     state: present
     update_cache: yes
+
+- name: Install Filebeat
+  systemd:
+    name: filebeat
+    state: restarted
