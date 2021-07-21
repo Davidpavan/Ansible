@@ -6,6 +6,11 @@
     src: rsyslog.conf
     dest: /etc/rsyslog.d/todo.conf
 
+- name: Update Filebeat Configuration
+  template:
+    src: filebeat.yml.j2
+    dest: /etc/filebeat/filebeat.yml
+
 - name: Restart rsyslog
   systemd:
     name: rsyslog
