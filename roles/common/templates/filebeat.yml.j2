@@ -13,11 +13,11 @@ json.keys_under_root: true
 
 {% if IS_STRUCTURED %}
 output.elasticsearch:
-  hosts: ["localhost:9200"]
+  hosts: ["192.168.0.63:9200"]
   index: "{{COMPONENT}}-%{+yyyy.MM.dd}"
 {% else %}
 output.logstash:
-  hosts: ["localhost:5044"]
+  hosts: ["192.168.0.63:5044"]
 {% endif %}
 
 {% if IS_STRUCTURED %}
