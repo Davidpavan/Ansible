@@ -8,7 +8,7 @@ json.keys_under_root: true
   paths:
     - {{ log_filename.file }}
   fields:
-    logType: { { log_filename.type } }
+    logType: {{ log_filename.type }}
 {% endfor %}
 
 {% if IS_STRUCTURED %}
