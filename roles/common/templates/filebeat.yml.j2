@@ -4,7 +4,7 @@ filebeat.inputs:
 {% if IS_STRUCTURED %}
   json.keys_under_root: true
 {% endif %}
-  enabled: false
+  enabled: true
   paths:
     - {{ log_filename.file }}
   fields:
