@@ -3,4 +3,4 @@
     url: http://3.239.210.146:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{ APP_VERSION }}.zip
     dest: /tmp/{{COMPONENT}}.zip
     username: admin
-    password: admin123.
+    password: admin123
