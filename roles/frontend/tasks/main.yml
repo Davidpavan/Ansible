@@ -45,6 +45,11 @@
     dest: /etc/nginx/sites-enabled/todo.conf
   notify: Restart nginx
 
+- name: Update nginx main config file
+  template:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+
 - name: Start service
   systemd:
     name: nginx
